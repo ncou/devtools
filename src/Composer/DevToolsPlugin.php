@@ -102,28 +102,22 @@ class DevToolsPlugin implements
     {
         $config = new Configuration(self::$composer, $this->getCommandPrefix(), $this->repoRoot);
 
-        /** @psalm-suppress DeprecatedClass */
         return [
             new AnalyzeCommand($config),
             new AnalyzePhpStanCommand($config),
             new AnalyzePsalmCommand($config),
-            /*
             new BuildCleanCacheCommand($config),
             new BuildCleanCommand($config),
             new BuildCleanCoverageCommand($config),
-            new KeepAChangelogCommand($config),
             new LicenseCheckerCommand($config),
             new LintCommand($config),
             new LintFixCommand($config),
-            new LintPdsCommand($config),
             new LintStyleCommand($config),
             new LintSyntaxCommand($config),
-            new PreCommitCommand($config),
             new TestAllCommand($config),
             new TestCoverageCiCommand($config),
             new TestCoverageHtmlCommand($config),
             new TestUnitCommand($config),
-            */
         ];
     }
 
