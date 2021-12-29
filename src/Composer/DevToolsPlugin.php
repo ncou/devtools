@@ -107,6 +107,7 @@ class DevToolsPlugin implements
             new AnalyzeCommand($config),
             new AnalyzePhpStanCommand($config),
             new AnalyzePsalmCommand($config),
+            /*
             new BuildCleanCacheCommand($config),
             new BuildCleanCommand($config),
             new BuildCleanCoverageCommand($config),
@@ -122,6 +123,7 @@ class DevToolsPlugin implements
             new TestCoverageCiCommand($config),
             new TestCoverageHtmlCommand($config),
             new TestUnitCommand($config),
+            */
         ];
     }
 
