@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chine\Dev\Tools\Composer\Command;
+namespace Chiron\Dev\Tools\Composer\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
