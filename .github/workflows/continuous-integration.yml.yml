@@ -4,9 +4,6 @@ name: "build"
 
 on: ["pull_request", "push"]
 
-env:
-  COMPOSER_ROOT_VERSION: "1.99.99"
-
 jobs:
   coding-standards:
     name: "Coding standards"
@@ -20,6 +17,7 @@ jobs:
         with:
           php-version: "latest"
           coverage: "none"
+          tools: composer:v2
 
       - name: "Install dependencies (Composer)"
         uses: "ramsey/composer-install@v2"
@@ -42,9 +40,10 @@ jobs:
         with:
           php-version: "latest"
           coverage: "none"
+          tools: composer:v2
 
       - name: "Install dependencies (Composer)"
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
 
       - name: "Statically analyze code (PHPStan)"
         run: "php bin/devtools analyze:phpstan"
@@ -64,9 +63,10 @@ jobs:
         with:
           php-version: "latest"
           coverage: "none"
+          tools: composer:v2
 
       - name: "Install dependencies (Composer)"
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
 
       - name: "Analyze security of code (Psalm)"
         run: "./vendor/bin/psalm --taint-analysis --report=build/logs/psalm.sarif"
@@ -88,10 +88,11 @@ jobs:
         with:
           php-version: "latest"
           coverage: "pcov"
+          tools: composer:v2
           ini-values: "memory_limit=-1"
 
       - name: "Install dependencies (Composer)"
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
 
       - name: "Run unit tests (PHPUnit)"
         run: "php bin/devtools test:coverage:ci"
@@ -141,9 +142,10 @@ jobs:
         with:
           php-version: "${{ matrix.php-version }}"
           coverage: "none"
+          tools: composer:v2
 
       - name: "Install dependencies (Composer)"
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "${{ matrix.composer-options }}"
