@@ -72,7 +72,7 @@ abstract class BaseCommand extends ComposerBaseCommand
     {
         $exitCode = 0;
 
-        if (!$this->overrideDefault) {
+        if (! $this->overrideDefault) {
             $exitCode = $this->doExecute($input, $output);
         }
 

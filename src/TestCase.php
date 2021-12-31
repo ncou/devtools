@@ -10,6 +10,10 @@ use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
+//https://github.com/jasny/phpunit-extension/blob/master/src/PrivateAccessTrait.php
+//https://github.com/lstrojny/phpunit-clever-and-smart/blob/master/src/PHPUnit/Runner/CleverAndSmart/Util.php#L35
+//https://github.com/diablomedia/phpunit-pretty-printer
+
 /**
  * A base test case for common test functionality
  */
@@ -29,7 +33,7 @@ abstract class TestCase extends PHPUnitTestCase
      * Configures and returns a mock object
      *
      * @param class-string<T> $class
-     * @param mixed ...$arguments
+     * @param mixed           ...$arguments
      *
      * @return T & MockInterface
      *

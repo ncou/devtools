@@ -4,13 +4,6 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\Composer;
 
-use Composer\Composer;
-use Composer\Factory;
-use Composer\IO\IOInterface;
-use Composer\Installer\PackageEvent;
-use Composer\Plugin\Capability\CommandProvider;
-use Composer\Plugin\Capable;
-use Composer\Plugin\PluginInterface;
 use Chiron\Dev\Tools\Composer\Command\AnalyzeCommand;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePhpStanCommand;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePsalmCommand;
@@ -19,19 +12,21 @@ use Chiron\Dev\Tools\Composer\Command\BuildCleanCacheCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCoverageCommand;
 use Chiron\Dev\Tools\Composer\Command\Configuration;
-use Chiron\Dev\Tools\Composer\Command\KeepAChangelogCommand;
 use Chiron\Dev\Tools\Composer\Command\LicenseCheckerCommand;
 use Chiron\Dev\Tools\Composer\Command\LintCommand;
 use Chiron\Dev\Tools\Composer\Command\LintFixCommand;
-use Chiron\Dev\Tools\Composer\Command\LintPdsCommand;
 use Chiron\Dev\Tools\Composer\Command\LintStyleCommand;
 use Chiron\Dev\Tools\Composer\Command\LintSyntaxCommand;
-use Chiron\Dev\Tools\Composer\Command\PreCommitCommand;
 use Chiron\Dev\Tools\Composer\Command\TestAllCommand;
 use Chiron\Dev\Tools\Composer\Command\TestCoverageCiCommand;
 use Chiron\Dev\Tools\Composer\Command\TestCoverageHtmlCommand;
 use Chiron\Dev\Tools\Composer\Command\TestUnitCommand;
-use Chiron\Dev\Tools\Filesystem\Filesystem;
+use Composer\Composer;
+use Composer\Factory;
+use Composer\IO\IOInterface;
+use Composer\Plugin\Capability\CommandProvider;
+use Composer\Plugin\Capable;
+use Composer\Plugin\PluginInterface;
 
 use function dirname;
 use function realpath;
@@ -53,6 +48,7 @@ class DevToolsPlugin implements
 
     private string $repoRoot;
 
+/*
     public static function setupBuildDirectory(PackageEvent $event, ?Filesystem $filesystem = null): void
     {
         $filesystem = $filesystem ?? new Filesystem();
@@ -77,6 +73,7 @@ class DevToolsPlugin implements
             $filesystem->appendToFile('./build/.gitignore', self::BUILD_GITIGNORE_COVERAGE);
         }
     }
+*/
 
     public function __construct()
     {

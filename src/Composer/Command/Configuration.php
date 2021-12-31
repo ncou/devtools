@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\Composer\Command;
 
-use Composer\Composer;
 use Chiron\Dev\Tools\Process\ProcessFactory;
+use Composer\Composer;
 
 /**
  * Configuration for commands
