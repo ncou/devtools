@@ -5,9 +5,11 @@ declare(strict_types=1);
 
 use Composer\Factory;
 use Composer\IO\ConsoleIO;
+use Composer\Util\Platform;
 use Chiron\Dev\Tools\Composer\DevToolsPlugin;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\StringInput;
 
@@ -40,8 +42,13 @@ use Symfony\Component\Console\Input\StringInput;
     require $composerAutoloader;
 
     $input = new StringInput('');
+/*
+    if (Platform::getEnv('COMPOSER_NO_INTERACTION') || !Platform::isTty(defined('STDIN') ? STDIN : fopen('php://stdin', 'r'))) {
+        $input->setInteractive(false);
+    }
+*/
     $output = Factory::createOutput();
-    $helperSet = new HelperSet();
+    $helperSet = new HelperSet([new QuestionHelper()]);
     $io = new ConsoleIO($input, $output, $helperSet);
 
     $composer = Factory::create($io);
