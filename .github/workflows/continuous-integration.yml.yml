@@ -98,19 +98,18 @@ jobs:
         run: "php bin/devtools test:coverage:ci"
 
       - name: "Publish coverage report to Codecov"
-        uses: "codecov/codecov-action@v1"
+        uses: "codecov/codecov-action@v2"
 
   unit-tests:
     name: "Unit tests"
     runs-on: ${{ matrix.operating-system }}
-    continue-on-error: ${{ matrix.experimental }}
 
     strategy:
       fail-fast: false
       matrix:
         php-version:
-          - "7.4"
           - "8.0"
+          - "8.1"
         operating-system:
           - "macos-latest"
           - "ubuntu-latest"
@@ -118,14 +117,6 @@ jobs:
         dependencies:
           - "lowest"
           - "highest"
-        experimental:
-          - false
-        include:
-          - php-version: "8.1"
-            operating-system: "ubuntu-latest"
-            dependencies: "highest"
-            experimental: true
-            composer-options: "--ignore-platform-req=php"
 
     steps:
       - name: "Configure Git (for Windows)"
