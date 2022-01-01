@@ -8,6 +8,7 @@ use Composer\IO\ConsoleIO;
 use Chiron\Dev\Tools\Composer\DevToolsPlugin;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\StringInput;
 
@@ -40,9 +41,9 @@ use Symfony\Component\Console\Input\StringInput;
     require $composerAutoloader;
 
     $input = new StringInput('');
-    $input->setInteractive(false);
+    //$input->setInteractive(false);
     $output = Factory::createOutput();
-    $helperSet = new HelperSet([]);
+    $helperSet = new HelperSet([new QuestionHelper()]);
     $io = new ConsoleIO($input, $output, $helperSet);
 
     $composer = Factory::create($io);

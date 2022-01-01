@@ -91,7 +91,9 @@ abstract class BaseCommand extends ComposerBaseCommand
 
     public function withBinPath(string $bin): string
     {
-        return $this->getBinDir() . DIRECTORY_SEPARATOR . $bin;
+        $path = $this->getBinDir() . DIRECTORY_SEPARATOR . $bin;
+
+        return str_replace('\\', '/', $path);
     }
 
     public function getPrefix(): string

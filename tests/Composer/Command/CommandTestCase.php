@@ -16,8 +16,6 @@ use RuntimeException;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-use const DIRECTORY_SEPARATOR;
-
 abstract class CommandTestCase extends TestCase
 {
     /**
@@ -104,7 +102,7 @@ abstract class CommandTestCase extends TestCase
 
     public function testWithBinPath(): void
     {
-        $binWithPath = $this->binDir . DIRECTORY_SEPARATOR . 'foo';
+        $binWithPath = $this->binDir . '/' . 'foo';
 
         $this->assertSame($binWithPath, $this->command->withBinPath('foo'));
     }
