@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use function array_merge;
 use function count;
 
-class LintSyntaxCommand extends ProcessCommand
+class LintSyntaxCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string
     {

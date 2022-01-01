@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
-use Chiron\Dev\Tools\Composer\Command\ProcessCommand;
+use Chiron\Dev\Tools\Composer\Command\AbstractProcessCommand;
 use Chiron\Dev\Tools\Process\Process;
 use Mockery\MockInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-abstract class ProcessCommandTestCase extends CommandTestCase
+abstract class AbstractProcessCommandTestCase extends AbstractCommandTestCase
 {
     /**
      * @var InputInterface & MockInterface
@@ -37,7 +37,7 @@ abstract class ProcessCommandTestCase extends CommandTestCase
 
     public function testGetProcessCommand(): void
     {
-        /** @var ProcessCommand $command */
+        /** @var AbstractProcessCommand $command */
         $command = $this->command;
 
         $this->assertSame(

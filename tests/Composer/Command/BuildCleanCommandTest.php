@@ -6,7 +6,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCommand;
 
-class BuildCleanCommandTest extends ProcessCommandTestCase
+class BuildCleanCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

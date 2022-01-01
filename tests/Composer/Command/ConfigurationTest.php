@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
+use Chiron\Dev\Tools\AbstractTestCase;
 use Chiron\Dev\Tools\Composer\Command\Configuration;
 use Chiron\Dev\Tools\Process\ProcessFactory;
-use Chiron\Dev\Tools\TestCase;
 use Composer\Composer;
 use Mockery\MockInterface;
 
-class ConfigurationTest extends TestCase
+class ConfigurationTest extends AbstractTestCase
 {
     public function testConfiguration(): void
     {

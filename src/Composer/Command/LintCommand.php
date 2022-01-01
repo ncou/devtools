@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function sprintf;
 
-class LintCommand extends BaseCommand
+class LintCommand extends AbstractBaseCommand
 {
     public function getBaseName(): string
     {

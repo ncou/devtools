@@ -6,7 +6,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
 use Chiron\Dev\Tools\Composer\Command\LicenseCheckerCommand;
 
-class LicenseCheckerCommandTest extends ProcessCommandTestCase
+class LicenseCheckerCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

@@ -67,7 +67,10 @@
         "class": "Chiron\\Dev\\Tools\\Composer\\DevToolsPlugin"
     },
     "scripts": {
+        "analyze": "php bin/devtools analyze:all",
+        "lint": "php bin/devtools lint:all",
         "lint-fix": "php bin/devtools lint:fix",
-        "test": "php bin/devtools test:all"
+        "test": "php bin/devtools test:all",
+        "test-unit": "php bin/devtools test:unit"
     }
 }

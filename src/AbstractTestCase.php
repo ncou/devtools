@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 /**
  * A base test case for common test functionality
  */
-abstract class TestCase extends PHPUnitTestCase
+abstract class AbstractTestCase extends PHPUnitTestCase
 {
     use MockeryPHPUnitIntegration;
 

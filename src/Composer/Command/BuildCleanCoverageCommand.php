@@ -7,7 +7,7 @@ namespace Chiron\Dev\Tools\Composer\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class BuildCleanCoverageCommand extends ProcessCommand
+class BuildCleanCoverageCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string
     {

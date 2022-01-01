@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\Composer;
 
+use Chiron\Dev\Tools\Composer\Command\AbstractBaseCommand;
 use Chiron\Dev\Tools\Composer\Command\AnalyzeCommand;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePhpStanCommand;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePsalmCommand;
-use Chiron\Dev\Tools\Composer\Command\BaseCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCacheCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCoverageCommand;
@@ -40,40 +40,9 @@ class DevToolsPlugin implements
     CommandProvider,
     PluginInterface
 {
-    private const BUILD_GITIGNORE_BASE = "\n*\n!.gitignore\n";
-    private const BUILD_GITIGNORE_CACHE = "\ncache/*\n!cache\n!cache/.gitkeep\n";
-    private const BUILD_GITIGNORE_COVERAGE = "\ncoverage/*\n!coverage\n!coverage/.gitkeep\n";
-
     private static Composer $composer;
 
     private string $repoRoot;
-
-/*
-    public static function setupBuildDirectory(PackageEvent $event, ?Filesystem $filesystem = null): void
-    {
-        $filesystem = $filesystem ?? new Filesystem();
-
-        if (!$filesystem->exists('./build')) {
-            $event->getIO()->write('<comment>Creating build directory</comment>');
-            $filesystem->mkdir('./build');
-            $filesystem->appendToFile('./build/.gitignore', self::BUILD_GITIGNORE_BASE);
-        }
-
-        if (!$filesystem->exists('./build/cache')) {
-            $event->getIO()->write('<comment>Creating build/cache directory</comment>');
-            $filesystem->mkdir('./build/cache');
-            $filesystem->touch('./build/cache/.gitkeep');
-            $filesystem->appendToFile('./build/.gitignore', self::BUILD_GITIGNORE_CACHE);
-        }
-
-        if (!$filesystem->exists('./build/coverage')) {
-            $event->getIO()->write('<comment>Creating build/coverage directory</comment>');
-            $filesystem->mkdir('./build/coverage');
-            $filesystem->touch('./build/coverage/.gitkeep');
-            $filesystem->appendToFile('./build/.gitignore', self::BUILD_GITIGNORE_COVERAGE);
-        }
-    }
-*/
 
     public function __construct()
     {
@@ -93,7 +62,7 @@ class DevToolsPlugin implements
     }
 
     /**
-     * @return BaseCommand[]
+     * @return AbstractBaseCommand[]
      */
     public function getCommands(): array
     {

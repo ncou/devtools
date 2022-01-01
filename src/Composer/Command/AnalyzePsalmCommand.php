@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function array_merge;
 
-class AnalyzePsalmCommand extends ProcessCommand
+class AnalyzePsalmCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string
     {

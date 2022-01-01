@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function sprintf;
 
-class TestAllCommand extends BaseCommand
+class TestAllCommand extends AbstractBaseCommand
 {
     public function getBaseName(): string
     {

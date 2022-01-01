@@ -7,7 +7,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 use Chiron\Dev\Tools\Composer\Command\LintSyntaxCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
-class LintSyntaxCommandTest extends ProcessCommandTestCase
+class LintSyntaxCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

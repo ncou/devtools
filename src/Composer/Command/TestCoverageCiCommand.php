@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function array_merge;
 
-class TestCoverageCiCommand extends ProcessCommand
+class TestCoverageCiCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string
     {

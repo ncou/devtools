@@ -7,7 +7,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePsalmCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
-class AnalyzePsalmCommandTest extends ProcessCommandTestCase
+class AnalyzePsalmCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

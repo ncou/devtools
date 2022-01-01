@@ -7,7 +7,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 use Chiron\Dev\Tools\Composer\Command\TestUnitCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
-class TestUnitCommandTest extends ProcessCommandTestCase
+class TestUnitCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

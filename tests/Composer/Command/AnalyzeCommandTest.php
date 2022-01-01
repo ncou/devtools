@@ -12,7 +12,7 @@ use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-class AnalyzeCommandTest extends CommandTestCase
+class AnalyzeCommandTest extends AbstractCommandTestCase
 {
     protected function setUp(): void
     {

@@ -7,7 +7,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 use Chiron\Dev\Tools\Composer\Command\AnalyzePhpStanCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
-class AnalyzePhpStanCommandTest extends ProcessCommandTestCase
+class AnalyzePhpStanCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

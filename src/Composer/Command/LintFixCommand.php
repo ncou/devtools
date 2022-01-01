@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function array_merge;
 
-class LintFixCommand extends ProcessCommand
+class LintFixCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string
     {

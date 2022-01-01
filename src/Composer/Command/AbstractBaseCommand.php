@@ -20,7 +20,7 @@ use const DIRECTORY_SEPARATOR;
 /**
  * @psalm-consistent-constructor
  */
-abstract class BaseCommand extends ComposerBaseCommand
+abstract class AbstractBaseCommand extends ComposerBaseCommand
 {
     private Configuration $configuration;
     private string $binDir;
@@ -33,7 +33,7 @@ abstract class BaseCommand extends ComposerBaseCommand
     abstract public function getBaseName(): string;
 
     /**
-     * Called by the execute() command in this BaseCommand class
+     * Called by the execute() command in this AbstractBaseCommand class
      */
     abstract protected function doExecute(InputInterface $input, OutputInterface $output): int;
 

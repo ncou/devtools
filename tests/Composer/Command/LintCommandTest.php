@@ -12,7 +12,7 @@ use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-class LintCommandTest extends CommandTestCase
+class LintCommandTest extends AbstractCommandTestCase
 {
     protected function setUp(): void
     {

@@ -8,7 +8,8 @@ use ReflectionException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-abstract class ProcessCommand extends BaseCommand
+/** TODO : transformer cette classe en Trait ??? */
+abstract class AbstractProcessCommand extends AbstractBaseCommand
 {
     /**
      * @return string[]

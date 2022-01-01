@@ -6,7 +6,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
 use Chiron\Dev\Tools\Composer\Command\TestCoverageCiCommand;
 
-class TestCoverageCiCommandTest extends ProcessCommandTestCase
+class TestCoverageCiCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {

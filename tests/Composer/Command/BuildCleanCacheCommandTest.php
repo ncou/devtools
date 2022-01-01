@@ -6,7 +6,7 @@ namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCacheCommand;
 
-class BuildCleanCacheCommandTest extends ProcessCommandTestCase
+class BuildCleanCacheCommandTest extends AbstractProcessCommandTestCase
 {
     protected function setUp(): void
     {
@@ -15,11 +15,6 @@ class BuildCleanCacheCommandTest extends ProcessCommandTestCase
         $this->processCommand = ['git', 'clean', '-fX', 'build/cache/.'];
 
         parent::setUp();
-    }
-
-    public function testGetAliases(): void
-    {
-        $this->assertSame(['bar:build:clear-cache'], $this->command->getAliases());
     }
 
     public function testRun(): void

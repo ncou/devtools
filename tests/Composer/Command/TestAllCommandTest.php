@@ -11,7 +11,7 @@ use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-class TestAllCommandTest extends CommandTestCase
+class TestAllCommandTest extends AbstractCommandTestCase
 {
     protected function setUp(): void
     {
