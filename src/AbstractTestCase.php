@@ -12,7 +12,9 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 //https://github.com/jasny/phpunit-extension/blob/master/src/PrivateAccessTrait.php
 //https://github.com/lstrojny/phpunit-clever-and-smart/blob/master/src/PHPUnit/Runner/CleverAndSmart/Util.php#L35
+
 //https://github.com/diablomedia/phpunit-pretty-printer
+//https://github.com/mnapoli/phpunit-easymock
 
 /**
  * A base test case for common test functionality

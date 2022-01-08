@@ -31,6 +31,12 @@ use Composer\Plugin\PluginInterface;
 use function dirname;
 use function realpath;
 
+// TODO : utiliser un outil de license type : https://github.com/malukenho/docheader
+// https://github.com/mezzio/mezzio/blob/3.9.x/composer.json#L106
+// psalm --shepherd --stats
+
+//https://github.com/viperproject/check-license-header
+
 /**
  * Provides a variety of Composer commands and events useful for PHP
  * library and application development

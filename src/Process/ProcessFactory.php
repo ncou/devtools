@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\Process;
 
-use ReflectionException;
+use Symfony\Component\Process\Process;
 
 /**
  * Factory to create a Process instance for running commands
@@ -15,8 +15,9 @@ class ProcessFactory
 {
     /**
      * @param string[] $command
+     * @param ?string  $cwd
      *
-     * @throws ReflectionException
+     * @return Process
      */
     public function factory(array $command, ?string $cwd = null): Process
     {

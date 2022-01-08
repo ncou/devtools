@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\Composer\Command;
 
-use ReflectionException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -23,9 +22,6 @@ abstract class AbstractProcessCommand extends AbstractBaseCommand
         };
     }
 
-    /**
-     * @throws ReflectionException
-     */
     protected function doExecute(InputInterface $input, OutputInterface $output): int
     {
         $process = $this->getConfiguration()->getProcessFactory()->factory(
