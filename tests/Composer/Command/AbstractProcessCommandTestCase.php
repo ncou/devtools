@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
 use Chiron\Dev\Tools\Composer\Command\AbstractProcessCommand;
+use Chiron\Dev\Tools\Process\Process;
 use Mockery\MockInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
 
 abstract class AbstractProcessCommandTestCase extends AbstractCommandTestCase
 {

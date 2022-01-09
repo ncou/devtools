@@ -1,4 +1,4 @@
-h1 align="center">ramsey/devtools</h1>
+<h1 align="center">ramsey/devtools</h1>
 
 <p align="center">
     <strong>A Composer plugin to aid PHP library and application development.</strong>
