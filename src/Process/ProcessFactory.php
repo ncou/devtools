@@ -23,6 +23,10 @@ class ProcessFactory
      */
     public function factory(array $command, ?string $cwd = null): Process
     {
-        return new Process($command, $cwd);
+        $process = new Process($command, $cwd);
+        // Init the timeout to 300 seconds.
+        $process->setTimeout(300);
+
+        return $process;
     }
 }
