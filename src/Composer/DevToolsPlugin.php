@@ -27,6 +27,7 @@ use Composer\IO\IOInterface;
 use Composer\Plugin\Capability\CommandProvider;
 use Composer\Plugin\Capable;
 use Composer\Plugin\PluginInterface;
+use Composer\Util\Filesystem;
 
 use function dirname;
 use function realpath;
@@ -53,7 +54,6 @@ class DevToolsPlugin implements
     public function __construct()
     {
         $composerFile = Factory::getComposerFile();
-
         $this->repoRoot = (string) realpath(dirname($composerFile));
     }
 
@@ -96,6 +96,13 @@ class DevToolsPlugin implements
     public function activate(Composer $composer, IOInterface $io): void
     {
         self::$composer = $composer;
+
+        $io->write('<info>Creating .build directory structure</info>');
+
+        $fs = new Filesystem();
+        $fs->ensureDirectoryExists('./.build');
+        $fs->ensureDirectoryExists('./.build/cache');
+        $fs->ensureDirectoryExists('./.build/coverage');
     }
 
     public function deactivate(Composer $composer, IOInterface $io): void

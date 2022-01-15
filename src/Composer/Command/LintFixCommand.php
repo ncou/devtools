@@ -34,7 +34,7 @@ class LintFixCommand extends AbstractProcessCommand
         return array_merge(
             [
                 $this->withBinPath('phpcbf'),
-                '--cache=build/cache/phpcs.cache',
+                '--cache=.build/cache/phpcs.cache',
             ],
             $args,
         );

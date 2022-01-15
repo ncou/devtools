@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-use Composer\Factory;
+use Composer\Factory as ComposerFactory;
 use Composer\IO\ConsoleIO;
 use Chiron\Dev\Tools\Composer\DevToolsPlugin;
 use Symfony\Component\Console\Application;
@@ -28,7 +28,7 @@ use Symfony\Component\Console\Input\StringInput;
     }
     unset($file);
 
-    if (!isset($composerAutoloader)) {
+    if (! isset($composerAutoloader)) {
         fwrite(
             STDERR,
             'To execute this command, please install Composer and run \'composer install\'.' . PHP_EOL
@@ -42,11 +42,11 @@ use Symfony\Component\Console\Input\StringInput;
 
     $input = new StringInput('');
     //$input->setInteractive(false);
-    $output = Factory::createOutput();
+    $output = ComposerFactory::createOutput();
     $helperSet = new HelperSet([new QuestionHelper()]);
     $io = new ConsoleIO($input, $output, $helperSet);
 
-    $composer = Factory::create($io);
+    $composer = ComposerFactory::create($io);
     $composerPlugin = new DevToolsPlugin();
     $composerPlugin->activate($composer, $io);
 

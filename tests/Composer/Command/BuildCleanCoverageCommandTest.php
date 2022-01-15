@@ -12,7 +12,7 @@ class BuildCleanCoverageCommandTest extends AbstractProcessCommandTestCase
     {
         $this->commandClass = BuildCleanCoverageCommand::class;
         $this->baseName = 'build:clean:coverage';
-        $this->processCommand = ['git', 'clean', '-fX', 'build/coverage/.'];
+        $this->processCommand = ['git', 'clean', '-fX', '.build/coverage/.'];
 
         parent::setUp();
     }

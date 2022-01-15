@@ -31,15 +31,15 @@ class TestCoverageCiCommand extends AbstractProcessCommand
                 '--colors=always',
                 '--coverage-text',
                 '--coverage-clover',
-                'build/coverage/clover.xml',
+                '.build/coverage/clover.xml',
                 '--coverage-cobertura',
-                'build/coverage/cobertura.xml',
+                '.build/coverage/cobertura.xml',
                 '--coverage-crap4j',
-                'build/coverage/crap4j.xml',
+                '.build/coverage/crap4j.xml',
                 '--coverage-xml',
-                'build/coverage/coverage-xml',
+                '.build/coverage/coverage-xml',
                 '--log-junit',
-                'build/junit.xml',
+                '.build/junit.xml',
             ],
             $args,
         );
@@ -65,14 +65,14 @@ class TestCoverageCiCommand extends AbstractProcessCommand
 
             Coverage reports include:
 
-              * Clover XML, saved to <info>build/coverage/clover.xml</info>
-              * Cobertura XML, saved to <info>build/coverage/cobertura.xml</info>
-              * Crap4J XML, saved to <info>build/coverage/crap4j.xml</info>
-              * PHPUnit XML, saved to <info>build/coverage/coverage-xml/</info>
+              * Clover XML, saved to <info>.build/coverage/clover.xml</info>
+              * Cobertura XML, saved to <info>.build/coverage/cobertura.xml</info>
+              * Crap4J XML, saved to <info>.build/coverage/crap4j.xml</info>
+              * PHPUnit XML, saved to <info>.build/coverage/coverage-xml/</info>
 
             Test logs include:
 
-              * JUnit XML, saved to <info>build/junit.xml</info>
+              * JUnit XML, saved to <info>.build/junit.xml</info>
 
             For more information on phpunit, see https://phpunit.de
 

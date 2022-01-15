@@ -12,7 +12,7 @@ class BuildCleanCommandTest extends AbstractProcessCommandTestCase
     {
         $this->commandClass = BuildCleanCommand::class;
         $this->baseName = 'build:clean:all';
-        $this->processCommand = ['git', 'clean', '-fX', 'build/'];
+        $this->processCommand = ['git', 'clean', '-fX', '.build/'];
 
         parent::setUp();
     }
@@ -24,15 +24,15 @@ class BuildCleanCommandTest extends AbstractProcessCommandTestCase
 
     public function testRun(): void
     {
-        $this->output->expects()->writeln('<info>Cleaning the build directory...</info>');
+        $this->output->expects()->writeln('<info>Cleaning the .build directory...</info>');
 
         parent::testRun();
     }
 
     public function testRunWithFailure(): void
     {
-        $this->output->expects()->writeln('<info>Cleaning the build directory...</info>');
-        $this->output->expects()->writeln('<error>Unable to clean the build directory</error>');
+        $this->output->expects()->writeln('<info>Cleaning the .build directory...</info>');
+        $this->output->expects()->writeln('<error>Unable to clean the .build directory</error>');
 
         $this->doTestRun(
             function (callable $callback): int {

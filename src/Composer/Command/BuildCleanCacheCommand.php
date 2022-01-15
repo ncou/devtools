@@ -19,7 +19,7 @@ class BuildCleanCacheCommand extends AbstractProcessCommand
      */
     public function getProcessCommand(InputInterface $input, OutputInterface $output): array
     {
-        return ['git', 'clean', '-fX', 'build/cache/.'];
+        return ['git', 'clean', '-fX', '.build/cache/.'];
     }
 
     protected function configure(): void
@@ -27,18 +27,18 @@ class BuildCleanCacheCommand extends AbstractProcessCommand
         $this
             ->setHelp($this->getHelpText())
             ->setDescription(
-                'Cleans the build/cache/ directory.',
+                'Cleans the .build/cache/ directory.',
             );
     }
 
     protected function doExecute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln('<info>Clearing the build cache...</info>');
+        $output->writeln('<info>Clearing the .build cache...</info>');
 
         $exitCode = parent::doExecute($input, $output);
 
         if ($exitCode !== 0) {
-            $output->writeln('<error>Unable to clear the build cache</error>');
+            $output->writeln('<error>Unable to clear the .build cache</error>');
         }
 
         return $exitCode;
@@ -50,15 +50,15 @@ class BuildCleanCacheCommand extends AbstractProcessCommand
 
         return <<<EOD
             The <info>%command.name%</info> command will erase everything from the
-            <info>build/cache/</info> directory that isn't committed to Git.
+            <info>.build/cache/</info> directory that isn't committed to Git.
 
             Many tools, such as PHPUnit, Psalm, PHPStan, Doctrine, and more, cache
-            files to speed up their processes. You may use the <info>build/cache/</info>
+            files to speed up their processes. You may use the <info>.build/cache/</info>
             directory as a place to store the cache for any such tools. Nothing in
-            <info>build/cache/</info> is under version control.
+            <info>.build/cache/</info> is under version control.
 
-            This command erases only the contents of <info>build/cache/</info>, while
-            <info>{$buildClean}</info> erases everything else from the <info>build/</info> directory. If you
+            This command erases only the contents of <info>.build/cache/</info>, while
+            <info>{$buildClean}</info> erases everything else from the <info>.build/</info> directory. If you
             wish to keep other build artifacts and erase only the cache,
             <info>%command.name%</info> is the command to use.
             EOD;

@@ -13,7 +13,7 @@ class LintFixCommandTest extends AbstractProcessCommandTestCase
     {
         $this->commandClass = LintFixCommand::class;
         $this->baseName = 'lint:fix';
-        $this->processCommand = ['/path/to/bin-dir/phpcbf', '--cache=build/cache/phpcs.cache', '--qux'];
+        $this->processCommand = ['/path/to/bin-dir/phpcbf', '--cache=.build/cache/phpcs.cache', '--qux'];
 
         parent::setUp();
 
@@ -32,7 +32,7 @@ class LintFixCommandTest extends AbstractProcessCommandTestCase
             'args' => ['--bar'],
         ]);
 
-        $this->processCommand = ['/path/to/bin-dir/phpcbf', '--cache=build/cache/phpcs.cache', '--help'];
+        $this->processCommand = ['/path/to/bin-dir/phpcbf', '--cache=.build/cache/phpcs.cache', '--help'];
 
         $this->testRun();
     }

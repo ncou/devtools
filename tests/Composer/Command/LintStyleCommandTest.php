@@ -16,7 +16,7 @@ class LintStyleCommandTest extends AbstractProcessCommandTestCase
         $this->processCommand = [
             '/path/to/bin-dir/phpcs',
             '--colors',
-            '--cache=build/cache/phpcs.cache',
+            '--cache=.build/cache/phpcs.cache',
             '--bar',
             '--baz',
         ];
@@ -38,7 +38,7 @@ class LintStyleCommandTest extends AbstractProcessCommandTestCase
             'args' => ['--bar'],
         ]);
 
-        $this->processCommand = ['/path/to/bin-dir/phpcs', '--colors', '--cache=build/cache/phpcs.cache', '--help'];
+        $this->processCommand = ['/path/to/bin-dir/phpcs', '--colors', '--cache=.build/cache/phpcs.cache', '--help'];
 
         $this->testRun();
     }

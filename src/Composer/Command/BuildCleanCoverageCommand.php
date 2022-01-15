@@ -19,7 +19,7 @@ class BuildCleanCoverageCommand extends AbstractProcessCommand
      */
     public function getProcessCommand(InputInterface $input, OutputInterface $output): array
     {
-        return ['git', 'clean', '-fX', 'build/coverage/.'];
+        return ['git', 'clean', '-fX', '.build/coverage/.'];
     }
 
     protected function configure(): void
@@ -27,7 +27,7 @@ class BuildCleanCoverageCommand extends AbstractProcessCommand
         $this
             ->setHelp($this->getHelpText())
             ->setDescription(
-                'Cleans the build/coverage/ directory.',
+                'Cleans the .build/coverage/ directory.',
             );
     }
 
@@ -50,13 +50,13 @@ class BuildCleanCoverageCommand extends AbstractProcessCommand
 
         return <<<EOD
             The <info>%command.name%</info> command will erase everything from the
-            <info>build/coverage/</info> directory that isn't committed to Git.
+            <info>.build/coverage/</info> directory that isn't committed to Git.
 
             This is helpful to clean up cached HTML or XML files from coverage
             reports.
 
-            This command erases only the contents of <info>build/coverage/</info>, while
-            <info>{$buildClean}</info> erases everything else from the <info>build/</info> directory. If you
+            This command erases only the contents of <info>.build/coverage/</info>, while
+            <info>{$buildClean}</info> erases everything else from the <info>.build/</info> directory. If you
             wish to keep other build artifacts and erase only the coverage,
             <info>%command.name%</info> is the command to use.
             EOD;

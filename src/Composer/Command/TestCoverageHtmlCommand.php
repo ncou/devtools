@@ -30,7 +30,7 @@ class TestCoverageHtmlCommand extends AbstractProcessCommand
                 $this->withBinPath('phpunit'),
                 '--colors=always',
                 '--coverage-html',
-                'build/coverage/coverage-html',
+                '.build/coverage/coverage-html',
             ],
             $args,
         );
@@ -53,7 +53,7 @@ class TestCoverageHtmlCommand extends AbstractProcessCommand
             a coverage report in HTML format. It uses any local configuration
             files (e.g., phpunit.xml) available.
 
-            The HTML coverage report is saved to <info>build/coverage/coverage-html/</info>.
+            The HTML coverage report is saved to <info>.build/coverage/coverage-html/</info>.
 
             For more information on phpunit, see https://phpunit.de
 

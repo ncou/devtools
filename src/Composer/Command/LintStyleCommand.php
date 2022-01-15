@@ -35,7 +35,7 @@ class LintStyleCommand extends AbstractProcessCommand
             [
                 $this->withBinPath('phpcs'),
                 '--colors',
-                '--cache=build/cache/phpcs.cache',
+                '--cache=.build/cache/phpcs.cache',
             ],
             $args,
         );

@@ -25,8 +25,8 @@ abstract class AbstractProcessCommand extends AbstractBaseCommand
     protected function doExecute(InputInterface $input, OutputInterface $output): int
     {
         $process = $this->getConfiguration()->getProcessFactory()->factory(
-            $this->getProcessCommand($input, $output),
-            $this->getConfiguration()->getRepositoryRoot(),
+            command: $this->getProcessCommand($input, $output),
+            cwd: $this->getConfiguration()->getRepositoryRoot(),
         );
 
         $process->start();
