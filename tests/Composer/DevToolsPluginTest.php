@@ -53,7 +53,6 @@ class DevToolsPluginTest extends AbstractTestCase
 
         /** @var IOInterface & MockInterface $io */
         $io = $this->mockery(IOInterface::class);
-        $io->expects()->write('<info>Creating .build directory structure</info>');
 
         $pluginActivated = new DevToolsPlugin();
         $pluginActivated->activate($composer, $io);
@@ -94,7 +93,6 @@ class DevToolsPluginTest extends AbstractTestCase
 
         /** @var IOInterface & MockInterface $io */
         $io = $this->mockery(IOInterface::class);
-        $io->expects()->write('<info>Creating .build directory structure</info>');
 
         $pluginActivated = new DevToolsPlugin();
         $pluginActivated->activate($composer, $io);

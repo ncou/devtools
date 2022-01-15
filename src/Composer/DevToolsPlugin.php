@@ -97,8 +97,7 @@ class DevToolsPlugin implements
     {
         self::$composer = $composer;
 
-        $io->write('<info>Creating .build directory structure</info>');
-
+        // Creating build directory structure.
         $fs = new Filesystem();
         $fs->ensureDirectoryExists('./.build');
         $fs->ensureDirectoryExists('./.build/cache');
