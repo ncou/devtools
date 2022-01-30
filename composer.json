@@ -58,6 +58,7 @@
             "ergebnis/composer-normalize": true,
             "captainhook/plugin-composer": true
         },
+        "process-timeout": 0,
         "sort-packages": true
     },
     "extra": {
