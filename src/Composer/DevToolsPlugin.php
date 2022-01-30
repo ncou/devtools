@@ -51,10 +51,11 @@ class DevToolsPlugin implements
 
     private string $repoRoot;
 
-    // TODO : virer la fonction __construct() et déplacer le code dans la méthode activate()
     public function __construct()
     {
-        // TODO : on peut soit faire un realpath('.') ou faire un getcwd() pour avoir le répertoire racine ca sera plus propre que ce bout de code !!!!
+        // TODO : virer la fonction __construct() et déplacer le code dans la méthode activate()
+        // TODO : on peut soit faire un realpath('.') ou faire un getcwd() pour avoir
+        // le répertoire racine ca sera plus propre que ce bout de code !!!!
         $composerFile = Factory::getComposerFile();
         $this->repoRoot = (string) realpath(dirname($composerFile));
     }
@@ -74,7 +75,11 @@ class DevToolsPlugin implements
      */
     public function getCommands(): array
     {
-        // TODO : je pense qu'il faut vérifier que le plugin est bien activé avant de retourner le tableau des commandes. prendre exemple sur Symfony/flex et retourner un tableau vide on n'a pas activé le plugin car sinon on aura surement une exception car $composer ou $repoRoot n'aura pas été activé !!!!
+        // TODO : je pense qu'il faut vérifier que le plugin est bien activé avant de
+        //retourner le tableau des commandes. prendre exemple sur Symfony/flex et retourner
+        //un tableau vide on n'a pas activé le plugin car sinon on aura surement une
+        //exception car $composer ou $repoRoot n'aura pas été activé !!!!
+
         // https://github.com/symfony/flex/blob/1.x/src/Flex.php#L106
         // https://github.com/symfony/flex/blob/1.x/src/Flex.php#L291
         // https://github.com/symfony/flex/blob/1.x/src/Flex.php#L966
