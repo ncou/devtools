@@ -33,7 +33,7 @@
         "vimeo/psalm": "^4.18"
     },
     "require-dev": {
-        "composer/composer": "^2.0"
+        "composer/composer": "^2.0.14"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -52,11 +52,11 @@
     ],
     "config": {
         "allow-plugins": {
+            "captainhook/plugin-composer": true,
             "composer/package-versions-deprecated": true,
-            "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
-            "captainhook/plugin-composer": true
+            "phpstan/extension-installer": true
         },
         "process-timeout": 0,
         "sort-packages": true
