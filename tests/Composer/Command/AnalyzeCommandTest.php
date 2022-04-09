@@ -11,6 +11,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Symfony\Component\Console\Input\InputDefinition;
 
 class AnalyzeCommandTest extends AbstractCommandTestCase
 {
@@ -51,9 +52,11 @@ class AnalyzeCommandTest extends AbstractCommandTestCase
 
         /** @var Application & MockInterface $application */
         $application = $this->mockery(Application::class, [
-            'getHelperSet' => $this->mockery(HelperSet::class),
+            'getHelperSet' => $this->mockery(HelperSet::class)
         ]);
+
         $application->shouldReceive('getDefinition')->passthru();
+
         $application
             ->expects()
             ->find($this->command->withPrefix('analyze:phpstan'))

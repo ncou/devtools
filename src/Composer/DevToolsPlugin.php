@@ -11,7 +11,6 @@ use Chiron\Dev\Tools\Composer\Command\AnalyzePsalmCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCacheCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCommand;
 use Chiron\Dev\Tools\Composer\Command\BuildCleanCoverageCommand;
-use Chiron\Dev\Tools\Composer\Command\Configuration;
 use Chiron\Dev\Tools\Composer\Command\LicenseCheckerCommand;
 use Chiron\Dev\Tools\Composer\Command\LintCommand;
 use Chiron\Dev\Tools\Composer\Command\LintFixCommand;
@@ -49,13 +48,16 @@ class DevToolsPlugin implements
 {
     private static Composer $composer;
 
-    private string $repoRoot;
+    private string $repoRoot; // TODO : renommer en $baseDir !!!
 
     public function __construct()
     {
         // TODO : virer la fonction __construct() et déplacer le code dans la méthode activate()
+
         // TODO : on peut soit faire un realpath('.') ou faire un getcwd() pour avoir
         // le répertoire racine ca sera plus propre que ce bout de code !!!!
+
+        // TODO : utiliser la classe Composer : Platform::getCwd(true)   => https://github.com/composer/composer/blob/be4b70ce79b34762acf1647e63108fdcca7f758b/src/Composer/Factory.php#L168
         $composerFile = Factory::getComposerFile();
         $this->repoRoot = (string) realpath(dirname($composerFile));
     }
@@ -108,6 +110,14 @@ class DevToolsPlugin implements
     public function activate(Composer $composer, IOInterface $io): void
     {
         self::$composer = $composer; // TODO : faire plutot un $this->composer = $composer;    https://github.com/symfony/flex/blob/1.x/src/Flex.php#L119
+
+        // TODO : récupérer la commande (ex : update / create-project ...etc) pour ne créer les répertoires que dans certains cas. Par exemple lors de la commande "du" ou "dump-update" pas la peine de créer les répertoires !!!!
+
+        // https://github.com/symfony/flex/blob/2.x/src/Flex.php#L148
+        // https://github.com/symfony/thanks/blob/main/src/Thanks.php#L49
+        // https://github.com/narrowspark/automatic-composer-prefetcher/blob/master/Plugin.php#L375
+
+        //$io->write('<info>Creating .build directory structure</info>');
 
         // TODO : utiliser le $this->repoRoot au lieu du "." en début de path pour la création des répertoires !!!!!
         // Creating build directory structure.

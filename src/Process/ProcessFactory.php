@@ -24,7 +24,7 @@ class ProcessFactory
     public function factory(array $command, ?string $cwd = null): Process
     {
         $process = new Process($command, $cwd);
-        // Init the timeout to 300 seconds.
+        // Init the timeout to 300 seconds (=5mn).
         $process->setTimeout(300);
 
         return $process;

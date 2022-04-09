@@ -7,9 +7,11 @@ namespace Chiron\Dev\Tools\Composer\Command;
 use Composer\Command\BaseCommand as ComposerBaseCommand;
 use Composer\EventDispatcher\EventDispatcher;
 use RuntimeException;
-use Symfony\Component\Console\Application;
+//use Symfony\Component\Console\Application;
+use Composer\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Chiron\Dev\Tools\Composer\Configuration;
 
 use function assert;
 use function is_string;
@@ -68,6 +70,7 @@ abstract class AbstractBaseCommand extends ComposerBaseCommand
         }
     }
 
+    // TODO : je ne sais pas si le final à un sens ici, à confirmer !!!
     final protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $exitCode = 0;
@@ -116,9 +119,12 @@ abstract class AbstractBaseCommand extends ComposerBaseCommand
      * @psalm-suppress MoreSpecificReturnType
      * @psalm-suppress LessSpecificReturnStatement
      */
+    // TODO : vérifier l'utilité de cette fonction car on a déjà la methode qui existe dans la commande de base, à quoi sert cette surcharge pour seulement faire un throw dans un cas trés rare qui ne devrait pas arriver !!!! Et dans la derniére version de Composer il y a déjà ce contrôle !!!!
+    //https://github.com/composer/composer/blob/f125fc1d0ac1e050fd11acb48f72bd3aae060dba/src/Composer/Command/BaseCommand.php#L55
+    /*
     public function getApplication(): Application
     {
-        /** @var Application | null $application */
+        // @var Application|null $application
         $application = parent::getApplication();
 
         if ($application === null) {
@@ -126,5 +132,5 @@ abstract class AbstractBaseCommand extends ComposerBaseCommand
         }
 
         return $application;
-    }
+    }*/
 }

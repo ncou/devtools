@@ -7,6 +7,8 @@ namespace Chiron\Dev\Tools\Composer\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+//TODO : utiliser un executablefinder pour trouver GIT => https://github.com/composer/composer/blob/2.2/src/Composer/Command/InitCommand.php#L745
+
 class BuildCleanCacheCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string

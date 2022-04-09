@@ -6,7 +6,7 @@ declare(strict_types=1);
 use Composer\Factory as ComposerFactory;
 use Composer\IO\ConsoleIO;
 use Chiron\Dev\Tools\Composer\DevToolsPlugin;
-use Symfony\Component\Console\Application;
+use Composer\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\ArgvInput;
@@ -46,11 +46,12 @@ use Symfony\Component\Console\Input\StringInput;
     $helperSet = new HelperSet([new QuestionHelper()]);
     $io = new ConsoleIO($input, $output, $helperSet);
 
-    $composer = ComposerFactory::create($io);
+    //$composer = ComposerFactory::create($io);
+    $composer = ComposerFactory::create($io, disablePlugins: true, disableScripts: true);
     $composerPlugin = new DevToolsPlugin();
     $composerPlugin->activate($composer, $io);
 
-    $application = new Application('chiron/devtools');
+    $application = new Application();
     $application->addCommands($composerPlugin->getCommands());
     $application->run(new ArgvInput($argv));
 })($argv);

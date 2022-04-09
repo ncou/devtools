@@ -67,7 +67,7 @@ abstract class AbstractProcessCommandTestCase extends AbstractCommandTestCase
             ->andReturn($process);
 
         $this->input->shouldIgnoreMissing();
-        $this->output->expects()->write('test buffer string');
+        $this->output->expects()->write('test buffer string', false, OutputInterface::OUTPUT_RAW);
 
         $this->assertSame($exitCode, $this->command->run($this->input, $this->output));
     }

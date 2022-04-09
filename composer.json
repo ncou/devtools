@@ -10,12 +10,11 @@
     ],
     "require": {
         "php": "^8.0 || ^8.1",
-        "composer-plugin-api": "^2",
+        "composer-plugin-api": "^2.0",
         "captainhook/captainhook": "^5.10",
         "captainhook/plugin-composer": "^5.3",
         "chiron/coding-standard": "^3.0",
         "ergebnis/composer-normalize": "^2.22",
-        "hamcrest/hamcrest-php": "^2.0",
         "madewithlove/license-checker": "^1.0",
         "mockery/mockery": "^1.4.4",
         "php-parallel-lint/php-console-highlighter": "^0.5",
@@ -33,7 +32,7 @@
         "vimeo/psalm": "^4.18"
     },
     "require-dev": {
-        "composer/composer": "^2.0.14"
+        "composer/composer": "^2.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -70,8 +69,8 @@
     "scripts": {
         "analyze": "php bin/devtools analyze:all",
         "lint": "php bin/devtools lint:all",
-        "lint-fix": "php bin/devtools lint:fix",
+        "lint:fix": "php bin/devtools lint:fix",
         "test": "php bin/devtools test:all",
-        "test-unit": "php bin/devtools test:unit"
+        "test:unit": "php bin/devtools test:unit"
     }
 }

@@ -9,6 +9,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function sprintf;
 
+// TODO : améliorer les commandes de phpcs avec l'argument "parallel" : https://github.com/cakephp/cakephp/blob/5.x/composer.json#L107
+
 class LintCommand extends AbstractBaseCommand
 {
     public function getBaseName(): string

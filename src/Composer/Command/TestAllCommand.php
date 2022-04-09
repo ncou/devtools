@@ -10,6 +10,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function sprintf;
 
+// TODO : utiliser un bout de code pour executer les commandes "composer run lint:all" par exemple. Ca éviterai de se trainer la méthode getApplication !!!!
+//https://github.com/veewee/composer-run-parallel/blob/e776154c2910cdc0b3b4400196fd2aa0b3da7251/src/Executor/AsyncTaskExecutor.php#L45
+
+// TODO : il faut modifier le Input qui est passé aux fonctions appellées pour faire suivre le verbose/quiet par exemple.
+//https://github.com/laravel/framework/blob/b9203fca96960ef9cd8860cb4ec99d1279353a8d/src/Illuminate/Console/Concerns/CallsCommands.php#L78
+
 class TestAllCommand extends AbstractBaseCommand
 {
     public function getBaseName(): string

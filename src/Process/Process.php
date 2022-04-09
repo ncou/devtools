@@ -40,6 +40,7 @@ class Process extends SymfonyProcess
      *
      * @throws ReflectionException
      */
+    // TODO : ce code semble^plus simple à utiliser : https://github.com/composer/composer/blob/2.2/src/Composer/Command/InitCommand.php#L749
     protected function useCorrectCommand(array $command)
     {
         $reflectedProcess = new ReflectionClass($this->getProcessClassName());
@@ -55,7 +56,7 @@ class Process extends SymfonyProcess
         }
 
         $commandLine = array_shift($command) . ' ';
-        $commandLine .= implode(' ', array_map(fn ($v) => escapeshellarg($v), $command));
+        $commandLine .= implode(' ', array_map(fn ($v) => escapeshellarg($v), $command)); // TODO virer le fn qui ne sert à rien: implode(' ', array_map('escapeshellarg', $command));
 
         return $commandLine;
     }
