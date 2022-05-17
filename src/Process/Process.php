@@ -44,7 +44,7 @@ class Process extends SymfonyProcess
      *
      * @throws ReflectionException
      */
-    protected function useCorrectCommand(array $command)
+    protected function useCorrectCommand(array $command): array|string
     {
         /** // TODO : ce code semble plus simple à utiliser (ca correspond à une version Process 4.2) :
     https://github.com/composer/composer/blob/2.2/src/Composer/Command/InitCommand.php#L749 */
