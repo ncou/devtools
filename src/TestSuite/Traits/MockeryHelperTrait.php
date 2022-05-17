@@ -31,6 +31,8 @@ use Mockery\MockInterface;
 //https://github.com/diablomedia/phpunit-pretty-printer
 //https://github.com/mnapoli/phpunit-easymock
 
+// TODO : il faut utiliser le coding-standard de ramsey si on veux avoir la régle MissingNativeTypeHint d'activée. Sinon virer le phpcs:disable car ca n'a pas de sens de conserver cette ligne si on n'a pas activé cette régle !!!!
+
 // TODO : transformer cette classe en trait ???
 /**
  * A base test case for common test functionality
