@@ -120,17 +120,6 @@ abstract class AbstractCommandTestCase extends AbstractTestCase
         $this->assertSame($expected, $this->command->withPrefix('cmd'));
     }
 
-/**
-    public function testGetApplicationThrowsException(): void
-    {
-        $this->command->setApplication(null);
-
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Could not find an Application instance');
-
-        $this->command->getApplication();
-    }
-*/
     public function testRunWithOverride(): void
     {
         $this->composer->shouldReceive('getPackage->getExtra')->andReturn([
