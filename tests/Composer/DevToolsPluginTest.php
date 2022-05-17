@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Chiron\Test\Dev\Tools\Composer;
 
-use Chiron\Dev\Tools\TestSuite\AbstractTestCase;
 use Chiron\Dev\Tools\Composer\Command\AbstractBaseCommand;
 use Chiron\Dev\Tools\Composer\DevToolsPlugin;
+use Chiron\Dev\Tools\TestSuite\AbstractTestCase;
 use Composer\Composer;
 use Composer\Config;
 use Composer\EventDispatcher\EventDispatcher;

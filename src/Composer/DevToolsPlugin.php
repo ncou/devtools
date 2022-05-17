@@ -111,7 +111,8 @@ class DevToolsPlugin implements
     {
         self::$composer = $composer; // TODO : faire plutot un $this->composer = $composer;    https://github.com/symfony/flex/blob/1.x/src/Flex.php#L119
 
-        // TODO : récupérer la commande (ex : update / create-project ...etc) pour ne créer les répertoires que dans certains cas. Par exemple lors de la commande "du" ou "dump-update" pas la peine de créer les répertoires !!!!
+        // TODO : récupérer la commande (ex : update / create-project ...etc) pour ne créer les répertoires que dans certains cas.
+        // Par exemple lors de la commande "du" ou "dump-update" pas la peine de créer les répertoires !!!!
 
         // https://github.com/symfony/flex/blob/2.x/src/Flex.php#L148
         // https://github.com/symfony/thanks/blob/main/src/Thanks.php#L49

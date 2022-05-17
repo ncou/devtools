@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Chiron\Tests\Dev\Tools\Composer\Command;
 
-use Chiron\Dev\Tools\TestSuite\AbstractTestCase;
 use Chiron\Dev\Tools\Composer\Command\AbstractBaseCommand;
 use Chiron\Dev\Tools\Composer\Configuration;
 use Chiron\Dev\Tools\Process\ProcessFactory;
+use Chiron\Dev\Tools\TestSuite\AbstractTestCase;
 use Composer\Composer;
 use Composer\Config;
 use Composer\EventDispatcher\EventDispatcher;
 use Mockery\MockInterface;
-use RuntimeException;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 
@@ -121,7 +120,7 @@ abstract class AbstractCommandTestCase extends AbstractTestCase
         $this->assertSame($expected, $this->command->withPrefix('cmd'));
     }
 
-/*
+/**
     public function testGetApplicationThrowsException(): void
     {
         $this->command->setApplication(null);

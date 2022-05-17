@@ -7,6 +7,10 @@ namespace Chiron\Dev\Tools\Composer\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+// TODO : utiliser un bout de code de ce genre : $this->filesystem->emptyDirectory($this->root);
+// https://github.com/composer/composer/blob/6a466a120a404d1c5d492e5ca715841c491517fc/src/Composer/Command/ClearCacheCommand.php#L73
+// https://github.com/composer/composer/blob/176d25851d1f99345c652a6ecbc7c3787071218d/src/Composer/Cache.php#L274
+
 class BuildCleanCommand extends AbstractProcessCommand
 {
     public function getBaseName(): string

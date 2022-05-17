@@ -4,12 +4,8 @@ declare(strict_types=1);
 
 namespace Chiron\Dev\Tools\TestSuite;
 
-use Hamcrest\Util;
-use Mockery;
-use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use Mockery\MockInterface;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use Chiron\Dev\Tools\TestSuite\Traits\MockeryHelperTrait;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 // TODO : ajouter un helper pour la reflection d'une classe et accéder à une méthode ou propriété privée (et changer sa valeur par exemple) :
 //https://github.com/windwalker-io/test/blob/master/src/Traits/TestAccessorTrait.php

@@ -34,15 +34,21 @@ class Process extends SymfonyProcess
     }
 
     /**
+     * Composer v2.2.3 use an old Symfony process package (v2.8.52) expecting the command to be a string.
+     * The newest Process package expect an array. This method detect the type (array or string) to use for the command.
+     * Starting v3.3 you can use both string|array and in version 4.2, Process constructor need an array an the function fromShellCommandline has been introduced
+     *
      * @param string[] $command
      *
      * @return string[]|string
      *
      * @throws ReflectionException
      */
-    // TODO : ce code semble^plus simple à utiliser : https://github.com/composer/composer/blob/2.2/src/Composer/Command/InitCommand.php#L749
     protected function useCorrectCommand(array $command)
     {
+        /** // TODO : ce code semble plus simple à utiliser (ca correspond à une version Process 4.2) :
+    https://github.com/composer/composer/blob/2.2/src/Composer/Command/InitCommand.php#L749 */
+
         $reflectedProcess = new ReflectionClass($this->getProcessClassName());
 
         /** @var ReflectionMethod $reflectedConstructor */
@@ -55,6 +61,7 @@ class Process extends SymfonyProcess
             }
         }
 
+        // TODO : je pense qu'on peux utiliser un Composer\Util\ProcessExecutor::escape() au lieu de escapeshellarg
         $commandLine = array_shift($command) . ' ';
         $commandLine .= implode(' ', array_map(fn ($v) => escapeshellarg($v), $command)); // TODO virer le fn qui ne sert à rien: implode(' ', array_map('escapeshellarg', $command));
 
