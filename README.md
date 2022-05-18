@@ -1,41 +1,39 @@
-<h1 align="center">ramsey/devtools</h1>
+<h1 align="center">chiron/devtools</h1>
 
 <p align="center">
     <strong>A Composer plugin to aid PHP library and application development.</strong>
 </p>
 
 <p align="center">
-    <a href="https://github.com/ramsey/devtools"><img src="https://img.shields.io/badge/source-ramsey/devtools-blue.svg?style=flat-square" alt="Source Code"></a>
-    <a href="https://packagist.org/packages/ramsey/devtools"><img src="https://img.shields.io/packagist/v/ramsey/devtools.svg?style=flat-square&label=release" alt="Download Package"></a>
-    <a href="https://php.net"><img src="https://img.shields.io/packagist/php-v/ramsey/devtools.svg?style=flat-square&colorB=%238892BF" alt="PHP Programming Language"></a>
-    <a href="https://github.com/ramsey/devtools/blob/main/LICENSE"><img src="https://img.shields.io/packagist/l/ramsey/devtools.svg?style=flat-square&colorB=darkcyan" alt="Read License"></a>
-    <a href="https://github.com/ramsey/devtools-lib/actions/workflows/continuous-integration.yml"><img src="https://img.shields.io/github/workflow/status/ramsey/devtools-lib/build/main?style=flat-square&logo=github" alt="Build Status"></a>
-    <a href="https://codecov.io/gh/ramsey/devtools-lib"><img src="https://img.shields.io/codecov/c/gh/ramsey/devtools-lib?label=codecov&logo=codecov&style=flat-square" alt="Codecov Code Coverage"></a>
-    <a href="https://shepherd.dev/github/ramsey/devtools-lib"><img src="https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fshepherd.dev%2Fgithub%2Framsey%2Fdevtools-lib%2Fcoverage" alt="Psalm Type Coverage"></a>
+    <a href="https://github.com/ncou/devtools"><img src="https://img.shields.io/badge/source-chiron/devtools-blue.svg?style=flat-square" alt="Source Code"></a>
+    <a href="https://packagist.org/packages/chiron/devtools"><img src="https://img.shields.io/packagist/v/chiron/devtools.svg?style=flat-square&label=release" alt="Download Package"></a>
+    <a href="https://github.com/ncou/devtools/blob/master/LICENSE"><img src="https://img.shields.io/packagist/l/chiron/devtools.svg?style=flat-square&colorB=darkcyan" alt="Read License"></a>
+    <a href="https://github.com/ncou/devtools/actions/workflows/continuous-integration.yml"><img src="https://img.shields.io/github/workflow/status/ncou/devtools/build/master?style=flat-square&logo=github" alt="Build Status"></a>
+    <a href="https://app.codecov.io/gh/ncou/devtools"><img src="https://img.shields.io/codecov/c/gh/ncou/devtools?label=codecov&logo=codecov&style=flat-square" alt="Codecov Code Coverage"></a>
+    <a href="https://shepherd.dev/github/ncou/devtools"><img src="https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fshepherd.dev%2Fgithub%2Fncou%2Fdevtools%2Fcoverage" alt="Psalm Type Coverage"></a>
 </p>
 
 ## About
 
-I created this [Composer](https://getcomposer.org) plugin because I got tired of
-making changes to development tools and scripts in my repositories, only to find
-I liked the change so much, I now needed to apply it to all my repositories.
-This is an effort to consolidate and simplify.
+The idea behind this package is to consolidate and simplify the use of 
+development tools and scripts across all my repositories.
 
 These tools might not be for you, and that's okay.
 
 Maybe these tools help a lot, but you have different needs. That's also okay.
-You may create your own devtools, requiring
-[ramsey/devtools-lib](https://github.com/ramsey/devtools-lib) (the library code
-behind this plugin), to extend and add to these tools, creating your own
-Composer plugin.
+You may fork and modify to creating your own Composer plugin.
 
 Of course, if you want to help improve these tools, I welcome your contributions.
 Feel free to open issues, ask about or request features, and submit PRs. I can't
 wait to see what you come up with.
 
-This project adheres to a [code of conduct](CODE_OF_CONDUCT.md).
+This project adheres to a [code of conduct](./.github/CODE_OF_CONDUCT.md).
 By participating in this project and its community, you are expected to
 uphold this code.
+
+## Requirements
+
+- PHP 8.0 or 8.1
 
 ## Installation
 
@@ -43,7 +41,7 @@ Install this package as a development dependency using
 [Composer](https://getcomposer.org).
 
 ``` bash
-composer require --dev ramsey/devtools
+composer require --dev chiron/devtools
 ```
 
 ## Usage
@@ -62,13 +60,13 @@ composer list
 The commands this plugin provides are all intermingled with the rest of the
 Composer commands, so it may be hard to find them all. We have a way to group
 them by command namespace, though. Open `composer.json` and add a
-`ramsey/devtools.command-prefix` property to the `extra` section. You may use
+`chiron/devtools.command-prefix` property to the `extra` section. You may use
 any prefix you wish.
 
 ``` json
 {
     "extra": {
-        "ramsey/devtools": {
+        "chiron/devtools": {
             "command-prefix": "my-prefix"
         }
     }
@@ -102,13 +100,13 @@ of commands that looks like this:
 
 You can also list commands by command prefix with `composer list my-prefix`.
 
-### Extending or Overriding ramsey/devtools Commands
+### Extending or Overriding chiron/devtools Commands
 
-Maybe the commands ramsey/devtools provides don't do everything you need, or
+Maybe the commands chiron/devtools provides don't do everything you need, or
 maybe you want to replace them entirely. The configuration allows you to do
 this!
 
-Using the `ramsey/devtools.commands` property in the `extra` section of
+Using the `chiron/devtools.commands` property in the `extra` section of
 `composer.json`, you may specify any command (*without* your custom prefix, if
 you've configured one) as having other scripts to run, in addition to the
 command's default behavior, or you may override the default behavior entirely.
@@ -121,7 +119,7 @@ a custom Composer command, you can do here because they're the same thing.
 ``` json
 {
     "extra": {
-        "ramsey/devtools": {
+        "chiron/devtools": {
             "command-prefix": "my-prefix",
             "commands": {
                 "lint:all": {
@@ -151,7 +149,7 @@ scripts run, specify the `override` property and set it to `true`.
 ``` json
 {
     "extra": {
-        "ramsey/devtools": {
+        "chiron/devtools": {
             "commands": {
                 "lint:all": {
                     "override": true,
@@ -194,16 +192,18 @@ composer my-prefix:[TAB][TAB]
 ## Contributing
 
 Contributions are welcome! To contribute, please familiarize yourself with
-[CONTRIBUTING.md](CONTRIBUTING.md).
+[CONTRIBUTING.md](./.github/CONTRIBUTING.md).
 
 ## Coordinated Disclosure
 
 Keeping user information safe and secure is a top priority, and we welcome the
 contribution of external security researchers. If you believe you've found a
 security issue in software that is maintained in this repository, please read
-[SECURITY.md](SECURITY.md) for instructions on submitting a vulnerability report.
+[SECURITY.md](./.github/SECURITY.md) for instructions on submitting a vulnerability report.
 
-## Copyright and License
+## Credits
+This composer plugin is based on a fork from the excellent ramsey/devtools-lib.
 
-The ramsey/devtools library is copyright © [Ben Ramsey](https://benramsey.com)
-and licensed for use under the terms of the
+## License
+
+MIT License (MIT). Please see [`LICENSE`](./LICENSE) for more information.

@@ -10,7 +10,7 @@ code.
 
 You can find help and discussion in the following places:
 
-* GitHub Issues: <https://github.com/ramsey/devtools-lib/issues>
+* GitHub Issues: <https://github.com/ncou/devtools/issues>
 
 ## Reporting Bugs
 
@@ -72,11 +72,11 @@ When you do begin working on your feature, here are some guidelines to consider:
   We will use this description to update the CHANGELOG. If there is no
   description, or it does not adequately describe your feature, we may ask you
   to update the description.
-* ramsey/devtools-lib follows a superset of **[PSR-12 coding standard][psr-12]**.
+* chiron/devtools follows a superset of **[PSR-12 coding standard][psr-12]**.
   Please ensure your code does, too. _Hint: run `./bin/devtools lint` to check._
 * Please **write tests** for any new features you add.
 * Please **ensure that tests pass** before submitting your pull request.
-  ramsey/devtools-lib automatically runs tests for pull requests. However,
+  chiron/devtools automatically runs tests for pull requests. However,
   running the tests locally will help save time. _Hint: run `composer test`._
 * **Use topic/feature branches.** Please do not ask to pull from your main branch.
   * For more information, see "[Understanding the GitHub flow][gh-flow]."
@@ -90,7 +90,7 @@ When you do begin working on your feature, here are some guidelines to consider:
 
 ## Developing
 
-To develop this project, you will need [PHP](https://www.php.net) 7.4 or greater
+To develop this project, you will need [PHP](https://www.php.net) 8.0 or greater
 and [Composer](https://getcomposer.org).
 
 After cloning this repository locally, execute the following commands:
@@ -148,11 +148,6 @@ following command:
 ./bin/devtools analyze
 ```
 
-### Project Structure
-
-This project uses [pds/skeleton](https://github.com/php-pds/skeleton) as its
-base folder structure and layout.
-
 ### Running Tests
 
 The following must pass before we will accept a pull request. If this does not
@@ -169,9 +164,9 @@ composer test
 CaptainHook will automatically run all tests before pushing to the remote
 repository.
 
-[github]: https://github.com/ramsey/devtools-lib
-[issues]: https://github.com/ramsey/devtools-lib/issues
-[pull requests]: https://github.com/ramsey/devtools-lib/pulls
+[github]: https://github.com/ncou/devtools
+[issues]: https://github.com/ncou/devtools/issues
+[pull requests]: https://github.com/ncou/devtools/pulls
 [psr-12]: https://www.php-fig.org/psr/psr-12/
 [gh-flow]: https://guides.github.com/introduction/flow/
 [conventional commits]: https://www.conventionalcommits.org/
