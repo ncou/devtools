@@ -24,7 +24,7 @@
         "phpstan/phpstan-mockery": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.5",
-        "psalm/plugin-mockery": "^0.9",
+        "psalm/plugin-mockery": "^0.11",
         "psalm/plugin-phpunit": "^0.16",
         "ramsey/conventional-commits": "^1.3",
         "roave/security-advisories": "dev-latest",
